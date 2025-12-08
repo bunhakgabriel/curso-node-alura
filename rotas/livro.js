@@ -6,7 +6,6 @@ const router = Router();
 router.get("/", getLivros);
 
 router.post("/", (req, res) => {
-  const obj = req.body;
   res.send("Adicionar um novo livro");
 });
 

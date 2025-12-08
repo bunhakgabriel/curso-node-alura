@@ -7,5 +7,5 @@ app.use(express.json());
 app.use("/livros", livroRouter);
 
 app.listen(8000, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta 8000`);
 });
