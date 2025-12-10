@@ -1,0 +1,14 @@
+const fs = require("fs");
+
+function getAllLivros() {
+  try {
+    const livros = JSON.parse(fs.readFileSync("livros.json"));
+    return livros;
+  } catch (err) {
+    throw new Error("Erro ao ler o arquivo de livros: " + err.message);
+  }
+}
+
+module.exports = {
+  getAllLivros,
+};
