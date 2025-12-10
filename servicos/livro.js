@@ -19,7 +19,18 @@ function getLivroPorId(id) {
   }
 }
 
+function insereLivro(livroNovo) {
+  try {
+    const livros = JSON.parse(fs.readFileSync("livros.json"));
+    livros.push(livroNovo);
+    fs.writeFileSync("livros.json", JSON.stringify(livros, null, 2));
+  } catch (err) {
+    throw new Error("Erro ao escrever no arquivo de livros: " + err.message);
+  }
+}
+
 module.exports = {
   getAllLivros,
   getLivroPorId,
+  insereLivro,
 };
